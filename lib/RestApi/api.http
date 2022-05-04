@@ -1,0 +1,36 @@
+
+
+@token_z1 = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiZDhhMDZhZDI1NTA0OWEwOTJhNzAxZDQ1OTJjNTE5YmE4NjBjMGVjOWJlNjRiODVlYTU4Njc4ZDFjZTkxYmU1YzlhZGE1OGY3MTYzZTg4OGEiLCJpYXQiOjE2NTE2MzY5MDIuNTM0NDI1LCJuYmYiOjE2NTE2MzY5MDIuNTM0NDMsImV4cCI6MTY4MzE3MjkwMi4xOTM4MDQsInN1YiI6IjI1NDMiLCJzY29wZXMiOltdfQ.fHPLfFWYeHaXGlR2OyG9e7dPkgbNCoWIhFKDwzfK6ZqW1VZnCI0VB3jAzcAIjf0EwPvvyVMWOhjjtbg5inEYdV_yzZidPXi4seWKQ5KXD-shiGbmcN9spUh0-x4N7E2Nuq_yaFuW_LxYtjcKixi_huYS9lo7vr0w_KtzmT3yLpxZaDm8xloZHNJnQs7z7Hw0yr1pK1ByGxd4ADd7u8jl5s3ulkqwoDlfhrPfUwv-LZ-QcMnquYXx0rCQBQvHeqkVQm9eVziJpXQWt_jEYrgnvYZvvmUxv-iDrB0becD4rqfEzRjuy4jclOACLGQjw4r84zCiY4VXKi17AHpx_Ub5rfPmX5G0Fejvfj_5OsuBLlWiBj1S23R2vgq6jdG8eFiZz6ls6Or2Ajmq2coTY6sJb-D60ZM0TCb11ZqQ6_wkOKfwTFnIslL3d0Zad336jDUPKqKn1gc-WACXX1csCpA6COdmtl-ny4rb1gFVEVPc2-0Tq16zfWN4gpbguJ8CIpDaUiAFueSibSSH9-Ow5lvr3cOOQxVIPGNE_yBogTSYcxa9sd2EIUa4xVNLUP6Vj_LB29fcDz6a4WoLhMd0hleXbftaqEmVwt2AC0qoT4xJ0XOVbXHZRZCbk8EflLzbJiCpXFQVOD68dHQa40O4wKGC1GPkbzRhDMyI__ggsk-Ewb4
+@token_mini_ap = NGRmODVmMWYtYzc2ZS00NTU0LTllMmMtNzJjOTVjMjZkMTBh
+
+
+### Log in Z1 app to get token
+POST https://api-stagging.z1platform.com/api/s42/api/v2/signin-or-signup
+Accept: application/json
+Content-Type: application/json
+
+{
+    "phone" : "+85599663857",
+    "password" : "5555"
+}
+### Get Service Token to Mini App
+POST https://api-stagging.z1platform.com/api/s42/api/v2/service-tokens
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token_z1}}
+
+{
+    "service_id": 14
+}
+### Get Token App
+POST https://sub.flexitechnology.com/api/mobile/v1/auth-customer/login-with-token
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token_mini_ap}}
+
+# {
+#     "service_id": 14
+# }
+
+
+
